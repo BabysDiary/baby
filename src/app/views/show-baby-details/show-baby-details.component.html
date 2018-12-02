@@ -1,5 +1,5 @@
 <div *ngFor="let data of loadData">
-  <nz-card nzHoverable style="width:100%" [nzCover]="babyTemplate">
+  <nz-card nzHoverable style="width:100%" [nzCover]="babyTemplate" (click)="selectBabyDetails(data._id)">
     <nz-card-meta
       [nzTitle]="data.title"
       [nzDescription]="data.description"

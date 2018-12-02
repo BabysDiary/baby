@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-show-baby-details',
@@ -11,7 +12,9 @@ export class ShowBabyDetailsComponent implements OnInit {
   loadData = {};
   loadDataUrl = 'https://babys-diary.herokuapp.com/api/baby-diary';
 
-  constructor(private _http: HttpClient) {}
+  constructor(private _http: HttpClient,
+    private router: Router
+  ) {}
 
   ngOnInit() {
       this.loadBabyData();
@@ -21,6 +24,11 @@ export class ShowBabyDetailsComponent implements OnInit {
     this._http.get(this.loadDataUrl).subscribe(data => {
         console.log(data['data']);
       this.loadData = data['data'];
+      console.log(this.loadData['_id']);
     });
   }
+
+    selectBabyDetails(id) {
+        this.router.navigate(['/edit-baby-details'], { queryParams: { id: id } });
+    }
 }

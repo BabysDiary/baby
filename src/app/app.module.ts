@@ -14,11 +14,12 @@ import en from '@angular/common/locales/en';
 import { HomeComponent } from './views/home/home.component';
 import { AddBabyDetailsComponent } from './views/add-baby-details/add-baby-details.component';
 import { ShowBabyDetailsComponent } from './views/show-baby-details/show-baby-details.component';
+import { UpdateBabyDetailsComponent } from './views/update-baby-details/update-baby-details.component';
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AddBabyDetailsComponent, ShowBabyDetailsComponent],
+  declarations: [AppComponent, HomeComponent, AddBabyDetailsComponent, ShowBabyDetailsComponent, UpdateBabyDetailsComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule.forRoot(), ReactiveFormsModule, FormsModule, HttpClientModule, BrowserAnimationsModule, NgZorroAntdModule],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
