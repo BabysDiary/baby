@@ -1,0 +1,57 @@
+<nz-layout class="layout">
+  <nz-header>
+    <div class="logo">
+      <button nz-button [nzType]="'default'" (click)="toggleMenu()">
+        <i nz-icon [type]="toggleState?'menu-unfold':'menu-fold'"></i>
+      </button>
+    </div>
+  </nz-header>
+
+  <nz-layout>
+    <nz-sider
+      [nzWidth]="200"
+      style="background:#fff"
+      [nzCollapsedWidth]="toggleSize"
+      [nzCollapsed]="toggleState"
+    >
+      <ul nz-menu [nzMode]="'inline'" style="height:100%">
+        <li nz-menu-item routerLink="/baby-details">
+          <span title
+            ><i class="anticon anticon-laptop"></i> <a>Add Baby's Details</a>
+          </span>
+        </li>
+        <li nz-menu-item routerLink="/show-baby-details">
+          <span title
+            ><i class="anticon anticon-laptop"></i> <a>Show Baby's Details</a>
+          </span>
+        </li>
+        <!--
+          <li nz-submenu>
+            <span title><i class="anticon anticon-bar-chart"></i>
+              <a>Ledger</a>
+            </span>
+            <ul>
+              <li nz-menu-item routerLink="/user-ledger-data"><span class="sub-menu">-</span> Ledger Data</li>
+              <li nz-menu-item routerLink="/user-details"><span class="sub-menu">-</span> Add Assets</li>
+              <li nz-menu-item routerLink="/change-holder"><span class="sub-menu">-</span> Change Holder</li>
+            </ul>
+          </li>
+          <li nz-menu-item>
+            <span title><i class="anticon anticon-video-camera"></i>
+              <a>Network Status</a>
+            </span>
+          </li>
+        -->
+      </ul>
+    </nz-sider>
+    <nz-layout style="padding:0 24px 24px">
+      <nz-breadcrumb style="margin:16px 0;">
+        <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+        <nz-breadcrumb-item>...</nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <nz-content style="background:#fff; padding: 24px; min-height: 75vh;">
+        <router-outlet></router-outlet>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>
+</nz-layout>

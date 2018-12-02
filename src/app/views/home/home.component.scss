@@ -1,0 +1,28 @@
+.ant-menu a {
+  color: rgba(0, 0, 0, 0.65) !important;
+  text-decoration: none;
+}
+
+.logo {
+  height: 20vh !important;
+  background: url('https://goo.gl/V5j5DS');
+}
+
+.ant-layout-header {
+  padding: 0 !important;
+}
+
+li.ant-menu-submenu,
+li.ant-menu-item {
+  outline: none;
+}
+
+span.sub-menu {
+  font-size: 18px;
+  color: hotpink;
+}
+
+.logo button {
+  margin-bottom: 10px;
+  margin-left: 20px;
+}

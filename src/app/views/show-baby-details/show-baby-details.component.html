@@ -1,0 +1,16 @@
+<div *ngFor="let data of loadData">
+  <nz-card nzHoverable style="width:100%" [nzCover]="babyTemplate">
+    <nz-card-meta
+      [nzTitle]="data.title"
+      [nzDescription]="data.description"
+    >
+    </nz-card-meta>
+  </nz-card>
+  <ng-template #babyTemplate>
+    <img
+      alt="example"
+      [src]="data.babyImage.replace('public','https://babys-diary.herokuapp.com')"
+    />
+  </ng-template>
+  <br/>
+</div>

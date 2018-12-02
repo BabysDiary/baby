@@ -1,0 +1,59 @@
+<div class="">
+  <div><h5>My Baby's Diary</h5></div>
+  <br />
+  <div>
+    <form
+      #babyForm="ngForm"
+      enctype="multipart/form-data"
+      nz-form
+      (ngSubmit)="subscribeBabyDetails()"
+    >
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="title"
+          >Title</nz-form-label
+        >
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input
+            nz-input
+            name="title"
+            id="title"
+            [(ngModel)]="babyObject.title"
+          />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="description"
+          >Description</nz-form-label
+        >
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input
+            nz-input
+            name="description"
+            id="description"
+            [(ngModel)]="babyObject.description"
+          />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="babyImage"
+          >Upload Image</nz-form-label
+        >
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input
+            nz-input
+            type="file"
+            name="babyImage"
+            id="babyImage"
+            [(ngModel)]="babyObject.babyImage"
+            (change)="fileSelected($event)"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    
+        <br>
+      <button nz-button nzType="primary">Submit</button>
+    </form>
+  </div>
+</div>
