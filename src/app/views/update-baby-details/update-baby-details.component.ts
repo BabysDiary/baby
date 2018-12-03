@@ -12,6 +12,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class UpdateBabyDetailsComponent implements OnInit {
   babyObject: any;
   selectedPath: File = null;
+  btnIsDisabled: boolean = false;
   apiBabyDetails: 'https://babys-diary.herokuapp.com/api/baby-diary';
   babyId = '';
 
@@ -39,12 +40,15 @@ export class UpdateBabyDetailsComponent implements OnInit {
     formData.append('description', this.babyObject.description);
     formData.append('babyImage', this.selectedPath, this.selectedPath.name);
 
-    return this._http.put<any[]>('https://babys-diary.herokuapp.com/api/baby-diary?id='+this.babyId,
+    return this._http.put<any[]>(
+      'https://babys-diary.herokuapp.com/api/baby-diary?id=' + this.babyId,
       formData
     );
   }
 
   subscribeBabyDetails(): void {
+    //Disabling button
+    this.btnIsDisabled = true;
     this.updateBabyDetails(this.babyObject).subscribe(
       data => {
         console.log('Details Uploaded', data);

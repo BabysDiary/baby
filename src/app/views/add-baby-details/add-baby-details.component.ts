@@ -13,6 +13,7 @@ import { NzMessageService, UploadFile } from 'ng-zorro-antd';
 export class AddBabyDetailsComponent implements OnInit {
   babyObject: any;
   selectedPath: File = null;
+  btnIsDisabled: boolean = false;
   apiBabyDetails: 'https://babys-diary.herokuapp.com/api/baby-diary';
 
   ngOnInit() {
@@ -38,6 +39,8 @@ export class AddBabyDetailsComponent implements OnInit {
   }
 
   subscribeBabyDetails(): void {
+    //Disabling button
+    this.btnIsDisabled = true;
     this.postBabyDetails(this.babyObject).subscribe(
       data => {
         console.log('Details Uploaded', data);
